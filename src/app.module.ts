@@ -14,6 +14,7 @@ import { JoiValidationSchema } from './config/joi.validation';
     ConfigModule.forRoot({
       load: [EnvConfiguration],
       validationSchema: JoiValidationSchema,
+      envFilePath: process.env.NODE_ENV === 'production' ? undefined : '.env.dev'
     }),
 
     // ServeStaticModule.forRoot({
